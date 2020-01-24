@@ -204,7 +204,7 @@ let g:ycm_semantic_triggers =  {
   \ }
 " }}}
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " defx.nvim
 " 使用 ,e 切换显示文件浏览，使用 ,a 查找到当前文件位置
