@@ -5,6 +5,7 @@ Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
+Plug 'lambdalisue/suda.vim'
 call plug#end()
 
 " Settings {{{
