@@ -6,6 +6,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 Plug 'lambdalisue/suda.vim'
+
+Plug 'ruanyl/vim-gh-line'
 call plug#end()
 
 " Settings {{{
@@ -274,3 +276,6 @@ set relativenumber
 
 set cursorline
 "highlight CursorLine   cterm=NONE ctermbg=darkblue ctermfg=green guibg=NONE guifg=NONE
+
+" Vim gh line
+let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
