@@ -8,6 +8,9 @@ Plug 'kristijanhusak/defx-icons'
 Plug 'lambdalisue/suda.vim'
 
 Plug 'ruanyl/vim-gh-line'
+
+" swift
+Plug 'cythb/swift-apple'
 call plug#end()
 
 " Settings {{{
