@@ -5,6 +5,8 @@ Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
+Plug 'Shougo/denite.nvim'
+
 Plug 'lambdalisue/suda.vim'
 
 Plug 'ruanyl/vim-gh-line'
@@ -228,9 +230,12 @@ function! s:defx_mappings() abort
     nnoremap <silent><buffer><expr> s defx#do_action('open', 'botright vsplit')
     nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split')
     nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
+    nnoremap <silent><buffer><expr> N defx#do_action('new_file')
+    nnoremap <silent><buffer><expr> M defx#do_action('new_multiple_files')
 	nnoremap <silent><buffer><expr> dd defx#do_action('remove_trash')
     nnoremap <silent><buffer><expr> r defx#do_action('rename')
     nnoremap <silent><buffer><expr> q defx#do_action('quit')
+    nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')     " 显示隐藏文件
 endfunction
 
 call defx#custom#option('_', {
@@ -247,6 +252,34 @@ call defx#custom#option('_', {
 	\ })
 
 autocmd FileType defx call s:defx_mappings()
+
+" dein.vim
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+  inoremap <silent><buffer><expr> <C-o> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <C-o> denite#do_map('quit')
+endfunction
+
+call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+call denite#custom#var('file/rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
+nnoremap <silent> <C-p> :<C-u>Denite -start-filter `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
 " buffer设置
 set hidden " 避免必须保存修改才可以跳转buffer
