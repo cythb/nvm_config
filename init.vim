@@ -13,6 +13,9 @@ Plug 'ruanyl/vim-gh-line'
 
 " swift
 Plug 'cythb/swift-apple'
+
+" Markdown
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 " Settings {{{
@@ -328,3 +331,12 @@ let g:solarized_statusline = 'flat'
 " true-color
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" disbale syntax highlighting to prevent performence issue
+let g:defx_icons_enable_syntax_highlight = 1
+
+" Markdown
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_github=1
+let vim_markdown_preview_toggle=2
