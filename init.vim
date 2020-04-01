@@ -315,3 +315,6 @@ set cursorline
 
 " Vim gh line
 let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
+
+" Python3 support
+let g:python3_host_prog = '/usr/local/bin/python3'
