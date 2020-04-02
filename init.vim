@@ -84,7 +84,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 set pastetoggle=<F2>    " Toggle paste mode to disable syntax changes to content that's pasted iv
 " Go backward in jumplist
-nnoremap <C-a> <C-i>
+" conflict with increase num
+"nnoremap <C-a> <C-i>
 " Use 0 to jump to the first non-whitespace character on the line and ^ to go to the beginning of the line
 nnoremap 0 ^
 nnoremap ^ 0
@@ -324,7 +325,7 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-set background=dark
+"set background=dark
 set background=light
 colorscheme solarized8_flat
 
@@ -341,7 +342,7 @@ let g:defx_icons_enable_syntax_highlight = 1
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_github=1
-let vim_markdown_preview_toggle=2
+let vim_markdown_preview_toggle=1
 
 " Highlight
 nnoremap <Leader>h :noh<CR>
