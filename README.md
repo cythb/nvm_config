@@ -18,7 +18,7 @@ brew install grip
 ```
 
 - <c-m> Open chrome to preview
-- Generate html when you save file (:w)
+- ~~Generate html when you save file (:w)~~
 
 # 0x03. zshrc
 Maintain one copy of .zshrc on git, so you should remove the local one and link to this new one.
