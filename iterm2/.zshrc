@@ -9,7 +9,8 @@ export ZSH="/Users/ihugo/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="agnoster"
-ZSH_THEME="sunrise"
+#ZSH_THEME="sunrise"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -128,3 +129,7 @@ export PATH=$COCOS_X_ROOT:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT="/Users/ihugo/code/cocos2d-x/templates"
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+# theme
+export ZSH_CUSTOM="/Users/ihugo/.config/nvim/iterm2"
+

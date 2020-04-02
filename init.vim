@@ -325,8 +325,8 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 colorscheme solarized8_flat
 
 let g:solarized_termtrans = 1
