@@ -22,6 +22,7 @@ call plug#end()
 set clipboard=unnamed
 set nocompatible " Use vim settings
 set modelines=0	" Prevent security hole
+set autoread
 
 " All tabs are 4 spaces
 set expandtab
@@ -340,3 +341,6 @@ let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=2
+
+" Highlight
+nnoremap <Leader>h :noh<CR>
