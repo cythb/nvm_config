@@ -109,7 +109,8 @@ alias proxy='export all_proxy=socks5://op.l:7890'
 #alias proxy='export all_proxy=http://op.l:7891'
 alias unproxy='unset all_proxy'
 #alias ip='curl https://api.myip.com'
-alias ip="curl ifconfig.me/all.json"
+#alias ip="curl ifconfig.me/all.json"
+alias ip="curl ipinfo.io"
 
 # nvim
 alias vi='nvim'
