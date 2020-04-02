@@ -105,11 +105,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # proxy list
-#alias proxy='export all_proxy=socks5://op.l:7890'
-alias proxy='export all_proxy=http://op.l:7891'
+alias proxy='export all_proxy=socks5://op.l:7890'
+#alias proxy='export all_proxy=http://op.l:7891'
 alias unproxy='unset all_proxy'
 #alias ip='curl https://api.myip.com'
-alias ip="curl 'https://ifconfig.co/json' -H 'authority: ifconfig.co' -H 'pragma: no-cache' -H 'cache-control: no-cache' -H 'dnt: 1' -H 'upgrade-insecure-requests: 1' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36' -H 'sec-fetch-dest: document' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' -H 'sec-fetch-site: none' -H 'sec-fetch-mode: navigate' -H 'sec-fetch-user: ?1' -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8' -H 'cookie: cf_clearance=145ca4c4e695a9091ee1e8f6576b330777e607ab-1584852942-0-250; __cfduid=d53b4573b1879854c9d3ac73f9c292c941584852942' --compressed"
+alias ip="curl ifconfig.me/all.json"
 
 # nvim
 alias vi='nvim'
