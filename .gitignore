@@ -8,3 +8,4 @@ undo/
 .netrwhist
 swap/
 *-preview.html
+.DS_Store
