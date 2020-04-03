@@ -31,14 +31,19 @@ ln -s ~/.config/nvim/iterm2/.zshrc ~/.zshrc
 # 0x04. 安装oh-my-zsh主题
 
 1. 在.zshrc中配置`export ZSH_CUSTOM`
-2. `git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"`
+2. 进入目录更新submodule
+```bash
+cd /Users/ihugo/.config/nvim/iterm2/themes/spaceship-prompt
+git submodule update --init
+```
 3. `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"`
 
 注意如果用户名不是ihugo,则需要创建一个软link。比如 `ln -s /Users/hugo /Users/ihugo`
-
 
 # 0x05. 安装iterm2 dark mode配色
 
 在iterm中有一个dark模式的配色`Dracula.itermcolors`
 light mode的配色暂时选择用 `Solarized light`
 
+# 0x06. 同步Alfred数据
+Alfred/Advanced页面左下有一个按钮`Set preferences folder`。设置成OneDriver中`macOS/apps/Alfred/`即可。
