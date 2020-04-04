@@ -52,3 +52,17 @@ Alfred/Advanced页面左下有一个按钮`Set preferences folder`。设置成On
 ```bash
 rm $ZSH/themes/spaceship.zsh-theme
 ```
+
+# 0x08. ctags
+安装ctags 
+
+```bash
+brew install ctags
+ln /Users/ihugo/.config/nvim/.ctags ~/.ctags
+```
+
+ctags使用方法： 
+
+- (c-]) 跳转到方法实现； 
+
+- (control-t)返回跳转前位置;
