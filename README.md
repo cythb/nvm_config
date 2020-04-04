@@ -47,3 +47,8 @@ light mode的配色暂时选择用 `Solarized light`
 
 # 0x06. 同步Alfred数据
 Alfred/Advanced页面左下有一个按钮`Set preferences folder`。设置成OneDriver中`macOS/apps/Alfred/`即可。
+
+# 0x07. 删除`spaceship.zsh-theme`
+```bash
+rm $ZSH/themes/spaceship.zsh-theme
+```

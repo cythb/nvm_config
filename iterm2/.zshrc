@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ihugo/.oh-my-zsh"
@@ -64,6 +64,7 @@ ZSH_THEME="spaceship"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+export ZSH_CUSTOM="/Users/ihugo/.config/nvim/zsh_custom"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -130,7 +131,3 @@ export PATH=$COCOS_X_ROOT:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT="/Users/ihugo/code/cocos2d-x/templates"
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# theme
-export ZSH_CUSTOM="/Users/ihugo/.config/nvim/iterm2"
-

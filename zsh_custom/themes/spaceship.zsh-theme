@@ -1,0 +1,1 @@
+/Users/ihugo/.config/nvim/zsh_custom/themes/spaceship-prompt/spaceship.zsh-theme

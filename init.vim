@@ -4,8 +4,8 @@ call plug#begin()
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'kristijanhusak/defx-icons'
 Plug 'Shougo/denite.nvim'
+Plug 'kristijanhusak/defx-icons'
 
 Plug 'lambdalisue/suda.vim'
 
@@ -16,6 +16,11 @@ Plug 'cythb/swift-apple'
 
 " Markdown
 Plug 'JamshedVesuna/vim-markdown-preview'
+
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 call plug#end()
 
 " Settings {{{
@@ -325,8 +330,8 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-set background=dark
-"set background=light
+"set background=dark
+set background=light
 colorscheme solarized8_flat
 
 let g:solarized_termtrans = 1
@@ -346,3 +351,51 @@ let vim_markdown_preview_toggle=1
 
 " Highlight
 nnoremap <Leader>h :noh<CR>
+
+" Easy motion
+" {
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+" }
+
+" incsearch.vim x fuzzy x vim-easymotion
+function! s:config_easyfuzzymotion(...) abort
+  return extend(copy({
+  \   'converters': [incsearch#config#fuzzy#converter()],
+  \   'modules': [incsearch#config#easymotion#module()],
+  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+  \   'is_expr': 0,
+  \   'is_stay': 1
+  \ }), get(a:, 1, {}))
+endfunction
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+
+" ctags for swift -------------------------- {{{
+let g:tagbar_type_swift = {
+  \ 'ctagstype': 'swift',
+  \ 'kinds' : [
+    \ 'e:Enums',
+    \ 't:Typealiases',
+    \ 'p:Protocols',
+    \ 's:Structs',
+    \ 'c:Classes',
+    \ 'f:Functions',
+    \ 'v:Variables',
+    \ 'E:Extensions',
+    \ 'l:Constants',
+  \ ],
+  \ 'sort' : 0
+  \ }
+" }}}
