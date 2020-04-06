@@ -17,10 +17,12 @@ Plug 'cythb/swift-apple'
 " Markdown
 Plug 'JamshedVesuna/vim-markdown-preview'
 
+" easy motion
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
+
 call plug#end()
 
 " Settings {{{
@@ -331,8 +333,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
 "set background=dark
-set background=light
-colorscheme solarized8_flat
+"set background=light
+"colorscheme solarized8_flat
 
 let g:solarized_termtrans = 1
 let g:solarized_statusline = 'flat'
