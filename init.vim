@@ -23,6 +23,9 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 
+" Theme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 
 " Settings {{{
@@ -334,7 +337,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " Theme
 "set background=dark
 "set background=light
-"colorscheme solarized8_flat
+colorscheme solarized8_flat
+"colorscheme dracula
 
 let g:solarized_termtrans = 1
 let g:solarized_statusline = 'flat'
