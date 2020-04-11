@@ -118,8 +118,8 @@ set hlsearch
 " Remove search highlights with <leader><space>
 nnoremap <leader><space> :noh<cr>
 " Tab key matches bracket pairs
-nnoremap <tab> %
-vnoremap <tab> %
+nnoremap <C-n> %
+vnoremap <C-n> %
 " Use semi-colon as colon key
 " nnoremap ; :
 " TODO: Make a shortcut that puts ; at the end of the current line
@@ -186,6 +186,9 @@ nnoremap <leader>k :cp<CR>
 
 nnoremap <leader>d :YcmCompleter GoToDefinition <cr>
 nnoremap <leader>s :YcmCompleter GoToDeclaration <cr>
+" avoid key confused to use tab to escap vim mode
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 "let g:ycm_server_log_level = 'debug'
 let g:ycm_global_ycm_extra_conf = '/Users/admin/.ycm_extra_conf.py'
 :command! Errors :YcmDiag
@@ -355,9 +358,6 @@ let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=1
 
-" Highlight
-nnoremap <Leader>h :noh<CR>
-
 " Easy motion
 " {
 " <Leader>f{char} to move to {char}
@@ -388,7 +388,7 @@ function! s:config_easyfuzzymotion(...) abort
 endfunction
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
-" ctags for swift -------------------------- {{{
+" ctags for swift {{{
 let g:tagbar_type_swift = {
   \ 'ctagstype': 'swift',
   \ 'kinds' : [
@@ -404,4 +404,25 @@ let g:tagbar_type_swift = {
   \ ],
   \ 'sort' : 0
   \ }
+" }}}
+
+" Cpas {{{
+" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
+for c in range(char2nr('A'), char2nr('Z'))
+  execute 'lnoremap ' . nr2char(c+32) . ' ' . nr2char(c)
+  execute 'lnoremap ' . nr2char(c) . ' ' . nr2char(c+32)
+endfor
+" Kill the capslock when leaving insert mode.
+autocmd InsertLeave * set iminsert=0
+
+let b:keymap_name = "CAPS"
+" }}}
+
+" Use <tab> instead of <esc> {{{
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+cnoremap <Tab> <C-C><Esc>
+inoremap <silent> <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
 " }}}
