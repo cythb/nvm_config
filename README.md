@@ -66,3 +66,12 @@ ctags使用方法：
 - (c-]) 跳转到方法实现； 
 
 - (control-t)返回跳转前位置;
+
+# 0x09. 使用caps键代替control键
+因为caps使用频率不高，所以决定使用**使用caps键代替control键**
+在苹果设置(setting/keyboard/modifier keys)里面将caps和control键交换。
+主要是因为无法在vim层面将caps替换成control。
+
+# 0x10. vim键位设置
+1. 使用tab键来代替esc
+2. use <C-i> to insead of <Tab>
