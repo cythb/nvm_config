@@ -243,7 +243,7 @@ function! s:defx_mappings() abort
 	" Defx window keyboard mappings
 	setlocal signcolumn=no
 	" 使用回车打开文件
-	noremap <silent><buffer><expr> <CR> defx#do_action('multi', ['drop'])
+	nnoremap <silent><buffer><expr> <CR> defx#do_action('multi', ['drop'])
     nnoremap <silent><buffer><expr> h defx#async_action('cd', ['..'])
     nnoremap <silent><buffer><expr> s defx#do_action('open', 'botright vsplit')
     nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split')
@@ -277,14 +277,22 @@ autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
   \ denite#do_map('do_action')
+
+  nnoremap <silent><buffer><expr> s
+  \ denite#do_map('do_action', 'vsplit')
+
   nnoremap <silent><buffer><expr> d
   \ denite#do_map('do_action', 'delete')
+
   nnoremap <silent><buffer><expr> p
   \ denite#do_map('do_action', 'preview')
+
   nnoremap <silent><buffer><expr> q
   \ denite#do_map('quit')
+
   nnoremap <silent><buffer><expr> i
   \ denite#do_map('open_filter_buffer')
+
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
 endfunction
@@ -339,7 +347,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
 "set background=dark
-"set background=light
+set background=light
 colorscheme solarized8_flat
 "colorscheme dracula
 
