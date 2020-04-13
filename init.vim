@@ -432,5 +432,7 @@ vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 cnoremap <Tab> <C-C><Esc>
 inoremap <silent> <Tab> <Esc>`^
+
 inoremap <Leader><Tab> <Tab>
+inoremap <C-i> <Tab>
 " }}}
