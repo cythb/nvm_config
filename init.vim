@@ -63,9 +63,9 @@ set formatoptions-=tc
 set autoread                    " Automatically read from file whenever it's changed on disk
 
 " in many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+"if has('mouse')
+"  set mouse=a
+"endif
 
 " History
 "set nobackup		" prevent the ~ backup files from appearing on the filesystem
@@ -83,8 +83,8 @@ set incsearch		" do incremental searching
 " " Keyboard Mappings {{{
 " To find out what a key is mapped to execute :verbose map KEY, such as <C-h>
 nnoremap <leader>ev :e $MYVIMRC<cr>
-" Reload .vimrc
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Reload .vimrv
+nmap <silent> <leader>rv :so $MYVIMRC<CR>
 " Open a new vertical split window and switch to it
 nnoremap <leader>w <C-w>v<C-w>l
 " Navigate splits the same way you navigate tmux panes
@@ -346,10 +346,10 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-"set background=dark
-set background=light
-colorscheme solarized8_flat
-"colorscheme dracula
+set background=dark
+colorscheme dracula
+"set background=light
+"colorscheme solarized8_flat
 
 let g:solarized_termtrans = 1
 let g:solarized_statusline = 'flat'
@@ -434,5 +434,5 @@ cnoremap <Tab> <C-C><Esc>
 inoremap <silent> <Tab> <Esc>`^
 
 inoremap <Leader><Tab> <Tab>
-inoremap <C-i> <Tab>
+"inoremap <C-i> <Tab>
 " }}}
