@@ -107,12 +107,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # proxy list
-alias proxy='export all_proxy=socks5://op.l:7890'
-#alias proxy='export all_proxy=http://op.l:7891'
+alias proxy='export all_proxy=socks5://op.l:7891'
+#alias proxy='export all_proxy=http://op.l:7890'
 alias unproxy='unset all_proxy'
 #alias ip='curl https://api.myip.com'
 #alias ip="curl ifconfig.me/all.json"
-alias ip="curl ipinfo.io"
+alias ip="curl https://ipinfo.io"
 
 # nvim
 alias vi='nvim'
@@ -132,3 +132,14 @@ export PATH=$COCOS_X_ROOT:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT="/Users/ihugo/code/cocos2d-x/templates"
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+# libxml2
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper_lazy.sh

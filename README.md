@@ -75,3 +75,7 @@ ctags使用方法：
 # 0x10. vim键位设置
 1. 使用tab键来代替esc
 2. use <C-i> to insead of <Tab>
+
+# 0x11. frida-ios-dump
+install frida-ios-dump
+update .zshrc
