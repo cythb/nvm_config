@@ -32,7 +32,7 @@ call plug#end()
 set clipboard=unnamed
 set nocompatible " Use vim settings
 set modelines=0	" Prevent security hole
-set autoread
+set autoread " Automatically read from file whenever it's changed on disk
 
 " All tabs are 4 spaces
 set expandtab
@@ -60,7 +60,6 @@ let mapleader = ","
 autocmd FileType vim autocmd BufEnter * set textwidth=0     " Force this on .vimrc which otherwise attempts to override and text textwidth=78
 set textwidth=0
 set formatoptions-=tc
-set autoread                    " Automatically read from file whenever it's changed on disk
 
 " in many terminal emulators the mouse works just fine, thus enable it.
 "if has('mouse')
@@ -84,7 +83,7 @@ set incsearch		" do incremental searching
 " To find out what a key is mapped to execute :verbose map KEY, such as <C-h>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 " Reload .vimrv
-nmap <silent> <leader>rv :so $MYVIMRC<CR>
+nmap <silent> <leader>so :so $MYVIMRC<CR>
 " Open a new vertical split window and switch to it
 nnoremap <leader>w <C-w>v<C-w>l
 " Navigate splits the same way you navigate tmux panes
@@ -272,6 +271,15 @@ call defx#custom#option('_', {
 autocmd FileType defx call s:defx_mappings()
 
 " dein.vim
+function! Denite_do_open(split_cmd, context) abort
+  execute(a:split_cmd)
+  call denite#do_action(a:context, 'open', a:context['targets'])
+endfunction
+call denite#custom#action('openable,file,buffer,directory', 'left', funcref('Denite_do_open', ['leftabove vsplit']))
+call denite#custom#action('openable,file,buffer,directory', 'below', funcref('Denite_do_open', ['rightbelow split']))
+call denite#custom#action('openable,file,buffer,directory', 'above', funcref('Denite_do_open', ['leftabove  split']))
+call denite#custom#action('openable,file,buffer,directory', 'right', funcref('Denite_do_open', ['rightbelow vsplit']))
+
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
@@ -279,7 +287,7 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action')
 
   nnoremap <silent><buffer><expr> s
-  \ denite#do_map('do_action', 'vsplit')
+  \ denite#do_map('do_action', 'right')
 
   nnoremap <silent><buffer><expr> d
   \ denite#do_map('do_action', 'delete')
@@ -330,7 +338,8 @@ nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 
 " 显示行号
-set relativenumber
+"set relativenumber
+set number
 
 " 高亮当前行和列
 "set cursorcolumn
@@ -346,7 +355,7 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-let isLight = 1
+let isLight = 0
 if isLight == 1 
   set background=light
   colorscheme solarized8_flat
