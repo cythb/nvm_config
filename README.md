@@ -82,3 +82,18 @@ ctags使用方法：
 # 0x11. frida-ios-dump
 install frida-ios-dump
 update .zshrc
+
+# 0x12. install fcitx
+## install fcitx-remote
+```bash
+git clone https://github.com/xcodebuild/fcitx-remote-for-osx.git
+cd fcitx-remote-for-osx
+./build.py build all
+# general method
+cp ./fcitx-remote-general /usr/local/bin/fcitx-remote
+# squirrel for example
+cp ./fcitx-remote-squirrel-rime-upstream /usr/local/bin/fcitx-remote
+```
+
+## install fcitx for vim
+PlugInstall

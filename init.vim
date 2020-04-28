@@ -26,6 +26,8 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
 
+" fcitx
+Plug 'file://'.expand('~/.config/nvim/local_plugin/fcitx')
 call plug#end()
 
 " Settings {{{
@@ -449,3 +451,5 @@ let b:keymap_name = "CAPS"
 "inoremap <Leader><Tab> <Tab>
 "inoremap <C-i> <Tab>
 " }}}
+
+let g:fcitx_remote = '/usr/local/bin/fcitx-remote'
