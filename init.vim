@@ -117,8 +117,8 @@ set hlsearch
 " Remove search highlights with <leader><space>
 nnoremap <leader><space> :noh<cr>
 " Tab key matches bracket pairs
-nnoremap <C-n> %
-vnoremap <C-n> %
+nnoremap <Tab> %
+vnoremap <Tab> %
 " Use semi-colon as colon key
 " nnoremap ; :
 " TODO: Make a shortcut that puts ; at the end of the current line
@@ -186,7 +186,7 @@ nnoremap <leader>k :cp<CR>
 nnoremap <leader>d :YcmCompleter GoToDefinition <cr>
 nnoremap <leader>s :YcmCompleter GoToDeclaration <cr>
 " avoid key confused to use tab to escap vim mode
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_select_completion = ['<Tab>', '<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 "let g:ycm_server_log_level = 'debug'
 let g:ycm_global_ycm_extra_conf = '/Users/admin/.ycm_extra_conf.py'
@@ -440,12 +440,12 @@ let b:keymap_name = "CAPS"
 " }}}
 
 " Use <tab> instead of <esc> {{{
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-cnoremap <Tab> <C-C><Esc>
-inoremap <silent> <Tab> <Esc>`^
-
-inoremap <Leader><Tab> <Tab>
+"nnoremap <Tab> <Esc>
+"vnoremap <Tab> <Esc>gV
+"onoremap <Tab> <Esc>
+"cnoremap <Tab> <C-C><Esc>
+"inoremap <silent> <Tab> <Esc>`^
+"
+"inoremap <Leader><Tab> <Tab>
 "inoremap <C-i> <Tab>
 " }}}

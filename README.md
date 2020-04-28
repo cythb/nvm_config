@@ -73,7 +73,10 @@ ctags使用方法：
 主要是因为无法在vim层面将caps替换成control。
 
 # 0x10. vim键位设置
-1. 使用tab键来代替esc
+1. ~~使用tab键来代替esc。~~
+    1. <Tab>用来匹配括号，选择补全比较方便。
+    2. 为了保持和xcode统一。
+    3. 通过<C-[>来替换ESC使用也是比较方便。
 2. use <C-i> to insead of <Tab>
 
 # 0x11. frida-ios-dump
