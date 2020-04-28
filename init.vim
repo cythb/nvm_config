@@ -452,4 +452,6 @@ let b:keymap_name = "CAPS"
 "inoremap <C-i> <Tab>
 " }}}
 
+" fcitx {
 let g:fcitx_remote = '/usr/local/bin/fcitx-remote'
+" }
