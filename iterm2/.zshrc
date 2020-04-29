@@ -143,3 +143,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+export MonkeyDevPath=/Users/hugo/opt/MonkeyDev
+export MonkeyDevDeviceIP=
+export PATH=/Users/hugo/opt/MonkeyDev/bin:$PATH
+
