@@ -105,3 +105,6 @@ PlugInstall
 
 # install karabiner
 ln -s ~/.config/nvim/karabiner ~/.config/karabiner
+
+# Magnet Preferences
+![install-font.png](images/screenshort-Magnet.jpg)

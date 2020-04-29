@@ -360,7 +360,7 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-let isLight = 1
+let isLight = 0
 if isLight == 1 
   set background=light
   colorscheme solarized8_flat
