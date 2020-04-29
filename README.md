@@ -97,3 +97,7 @@ cp ./fcitx-remote-squirrel-rime-upstream /usr/local/bin/fcitx-remote
 
 ## install fcitx for vim
 PlugInstall
+
+# switch monitor with keyboard
+1. install service ( in directory )
+2. setup keyboard shortcut
