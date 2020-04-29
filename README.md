@@ -101,3 +101,6 @@ PlugInstall
 # switch monitor with keyboard
 1. install service ( in directory )
 2. setup keyboard shortcut
+
+# install karabiner
+ln -s ~/.config/nvim/karabiner ~/.config/karabiner
