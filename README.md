@@ -101,6 +101,7 @@ PlugInstall
 # switch monitor with keyboard
 1. install service ( in directory )
 2. setup keyboard shortcut
+3. ^-H go to previous monitor / ^-L go to next monitor
 
 # install karabiner
 ln -s ~/.config/nvim/karabiner ~/.config/karabiner
