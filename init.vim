@@ -30,7 +30,7 @@ Plug 'aserebryakov/vim-todo-lists'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " fcitx
-Plug 'file://'.expand('~/.config/nvim/local_plugin/fcitx')
+Plug 'file://'.expand('~/.config/nvim/vim-local-plugin')
 call plug#end()
 
 " Settings {{{
