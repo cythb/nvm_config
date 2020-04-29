@@ -23,6 +23,9 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 
+" todo
+Plug 'aserebryakov/vim-todo-lists'
+
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -357,7 +360,7 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-let isLight = 0
+let isLight = 1
 if isLight == 1 
   set background=light
   colorscheme solarized8_flat
