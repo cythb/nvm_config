@@ -31,6 +31,9 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 " fcitx
 Plug 'file://'.expand('~/.config/nvim/vim-local-plugin')
+
+" TypeScript
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " Settings {{{

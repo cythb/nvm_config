@@ -108,3 +108,11 @@ ln -s ~/.config/nvim/karabiner ~/.config/karabiner
 
 # Magnet Preferences
 ![install-font.png](images/screenshort-Magnet.jpg)
+
+# install nerdcommenter
+* [count]<leader>cc |NERDCommenterComment| 注释
+* [count]<leader>c<space> |NERDCommenterToggle| 取消注释
+* <leader>c$ |NERDCommenterToEOL| 从当前注释到行尾
+* <leader>cA |NERDCommenterAppend| 在行尾添加注释
+* [count]<leader>cu |NERDCommenterUncomment| 取消注释，这个可以取消嵌套的注释
+
