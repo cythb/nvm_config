@@ -27,13 +27,16 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'aserebryakov/vim-todo-lists'
 
 " Theme
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'dracula/vim', { 'as': 'dracula' }
 
 " fcitx
 Plug 'file://'.expand('~/.config/nvim/vim-local-plugin')
 
 " TypeScript
 Plug 'preservim/nerdcommenter'
+
+" indent line
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Settings {{{
@@ -369,7 +372,8 @@ if isLight == 1
   colorscheme solarized8_flat
 else
   set background=dark
-  colorscheme dracula
+  "colorscheme dracula
+  colorscheme solarized8_flat
 endif
 
 let g:solarized_termtrans = 1
