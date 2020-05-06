@@ -33,12 +33,14 @@ Plug 'aserebryakov/vim-todo-lists'
 Plug 'file://'.expand('~/.config/nvim/vim-local-plugin')
 
 " TypeScript
-Plug 'preservim/nerdcommenter', { 'for': 'typescript' }
 Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 
 " indent line
 Plug 'Yggdroot/indentLine'
+
+" commenter
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " Settings {{{
@@ -46,6 +48,7 @@ set clipboard=unnamed
 set nocompatible " Use vim settings
 set modelines=0	" Prevent security hole
 set autoread " Automatically read from file whenever it's changed on disk
+set colorcolumn=81
 
 " All tabs are 4 spaces
 set expandtab
