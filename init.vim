@@ -33,7 +33,9 @@ Plug 'aserebryakov/vim-todo-lists'
 Plug 'file://'.expand('~/.config/nvim/vim-local-plugin')
 
 " TypeScript
-Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdcommenter', { 'for': 'typescript' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 
 " indent line
 Plug 'Yggdroot/indentLine'
