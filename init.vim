@@ -41,6 +41,8 @@ Plug 'Yggdroot/indentLine'
 
 " commenter
 Plug 'preservim/nerdcommenter'
+
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " Settings {{{
@@ -470,3 +472,6 @@ let b:keymap_name = "CAPS"
 " fcitx {
 let g:fcitx_remote = '/usr/local/bin/fcitx-remote'
 " }
+
+" detecte itodo
+noremap <Leader>t :noautocmd vimgrep /itodo/j **/*.swift<CR>:cw<CR>
