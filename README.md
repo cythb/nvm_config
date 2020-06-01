@@ -122,7 +122,8 @@ ln -s ~/.config/nvim/karabiner ~/.config/karabiner
 :PlugClean
 :PlugInstall
 :CocInstall coc-json coc-tsserver
-:CocInstall coc-clangd
+~~:CocInstall coc-clangd~~
 :CocInstall coc-sourcekit
+:CocInstall coc-deno
 
 ```
