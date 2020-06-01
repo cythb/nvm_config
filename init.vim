@@ -17,6 +17,8 @@ exec 'set rtp+='.s:home
 " 将 ~/.vim 目录加入 runtimepath (有时候 vim 不会自动帮你加入）
 set rtp+=~/.config/nvim
 
+LoadScript init/base-setting.vim
+
 call plug#begin()
 
 Plug 'sheerun/vim-polyglot'
@@ -68,67 +70,6 @@ LoadScript init/coc.vim
 
 call plug#end()
 
-" Settings {{{
-set clipboard=unnamed
-set nocompatible " Use vim settings
-set modelines=0	" Prevent security hole
-set autoread " Automatically read from file whenever it's changed on disk
-set colorcolumn=81
-
-" All tabs are 4 spaces
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
-" General Settings
-set visualbell                  " No bell
-set t_vb=                       " No bell
-set encoding=utf-8
-set scrolloff=3                 " Allow text to scroll to center view when it's at the bottom of the document
-set autoindent
-set showmode
-set showcmd                     " Show incomplete commands
-set hidden                      " Open new file without being forced so save open buffer
-set wildmenu
-set wildmode=list:longest
-" Ignore file types in autocomplete
-set wildignore=*.pkl,*.swp,*.bak,*.pyc,*.class,*.o,*.obj,.DS_Store,*.jpg,*.d,*.dia,*.imageset,*.png,*.ai,*/Pods/*,*.xcworkspace,*.xcodeproj,*/tmp/*,*.lock,*/xcodebuild/*,*.orig,*.rope*
-set ruler                       " Show cursor position info in a line at the bottom
-set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
-set undofile                    " Preserve undo information between sessions
-let mapleader = "," 
-autocmd FileType vim autocmd BufEnter * set textwidth=0     " Force this on .vimrc which otherwise attempts to override and text textwidth=78
-set textwidth=0
-set formatoptions-=tc
-
-" in many terminal emulators the mouse works just fine, thus enable it.
-"if has('mouse')
-"  set mouse=a
-"endif
-
-" History
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-set swapfile
-set directory=~/.config/nvim/swap/
-set undodir=~/.config/nvim/undo/
-set history=500		" keep 50 lines of command line history
-set undolevels=500
-set incsearch		" do incremental searching
-" }}}
-"
 " " Keyboard Mappings {{{
 " To find out what a key is mapped to execute :verbose map KEY, such as <C-h>
 nnoremap <leader>ev :e $MYVIMRC<cr>
@@ -142,14 +83,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 set pastetoggle=<F2>    " Toggle paste mode to disable syntax changes to content that's pasted iv
-" Go backward in jumplist
-" conflict with increase num
-"nnoremap <C-a> <C-i>
 " Use 0 to jump to the first non-whitespace character on the line and ^ to go to the beginning of the line
 nnoremap 0 ^
 nnoremap ^ 0
 " When accidently typing :q out of order, do what's expected rather than showing a list of commands I may have been thinking of
-map q: :q
+map q; :q
 
 " Save a file that requires sudo privelage after you opened it
 cmap w!! w !sudo tee % >/dev/null
@@ -157,25 +95,15 @@ cmap w!! w !sudo tee % >/dev/null
 " Search Settings
 nnoremap / /\v
 vnoremap / /\v
-set ignorecase                      " Ignore case if all character in search string are lowercase
-set smartcase                       " Case-sensitive search if at least one character is uppercase
-set gdefault                        " By default, replace all occurences of a word on the line
-" Highlight search results while typing
-set incsearch
-set showmatch
-set hlsearch
 " Remove search highlights with <leader><space>
 nnoremap <leader><space> :noh<cr>
 " Tab key matches bracket pairs
 nnoremap <Tab> %
 vnoremap <Tab> %
 " Use semi-colon as colon key
-" nnoremap ; :
-" TODO: Make a shortcut that puts ; at the end of the current line
-"nnoremap <leader>:
+nnoremap ; :
 
 "These are to cancel the default behavior of d, D, c, C to put the text they delete in the default register. Note that this means e.g. "ad won't copy the text into register a anymore.  You have to explicitly yank it.
-vnoremap i d \| :let @"=@c<cr>
 nnoremap d "cd
 vnoremap d "cd
 nnoremap D "cD
@@ -187,7 +115,7 @@ vnoremap C "cC
 nnoremap x "cx
 vnoremap x "cx
 
-vmap r "_dP       // Replace the selected text with what's in the yank register
+vmap r "_dP
 
 " vim training
 nnoremap <up> <nop>
@@ -206,10 +134,6 @@ nnoremap <leader>n :set number<cr>
 nnoremap <leader>nn :set nonumber<cr>
 nnoremap <leader>m :set relativenumber<cr>
 nnoremap <leader>mm :set norelativenumber<cr>
-" Cool ideas to show relative or absolute line numbers depending on current use
-":au FocusLost * :set number
-":au FocusGained * :set relativenumber
-"autocmd InsertEnter * :set number
 
 " Cut (Copy and then delete the current line)
 nnoremap yd yydd<CR>
