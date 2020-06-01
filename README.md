@@ -116,3 +116,13 @@ ln -s ~/.config/nvim/karabiner ~/.config/karabiner
 * <leader>cA |NERDCommenterAppend| 在行尾添加注释
 * [count]<leader>cu |NERDCommenterUncomment| 取消注释，这个可以取消嵌套的注释
 
+# Using coc.vim instead of YCM
+```bash
+//in vim
+:PlugClean
+:PlugInstall
+:CocInstall coc-json coc-tsserver
+:CocInstall coc-clangd
+:CocInstall coc-sourcekit
+
+```

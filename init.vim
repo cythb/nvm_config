@@ -1,7 +1,7 @@
 
 call plug#begin()
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
@@ -43,6 +43,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'preservim/nerdcommenter'
 
 Plug 'jiangmiao/auto-pairs'
+
+" COC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 " Settings {{{
@@ -181,7 +185,7 @@ nnoremap <leader>mm :set norelativenumber<cr>
 
 " Cut (Copy and then delete the current line)
 nnoremap yd yydd<CR>
-"vnoremap yd y \| d<CR>
+vnoremap yd y \| d<CR>
 
 " Jump to next and previous items in quickfix list
 " Having either of these shortcuts enabled breaks selecting items in the quickfix list by
@@ -191,61 +195,6 @@ nnoremap <leader>k :cp<CR>
 
 " }}}
 "
-
-" YouCompleteMe {{{
-
-" I might want to use jedi-vim instead of YouCompleteMe for Python:
- "let g:ycm_filetype_specific_completion_to_disable = { 'python' : 1 }
- "let g:ycm_filetype_blacklist = { 'python' : 1 }
-
-" Also consider using clang complete instead of YouCompleteMe for Objective-C
-" since it currently supports multi argument methods. http://appventure.me/2013/01/29/use-vim-as-xcode-alternative-ios-mac-cocoa/
-
-nnoremap <leader>d :YcmCompleter GoToDefinition <cr>
-nnoremap <leader>s :YcmCompleter GoToDeclaration <cr>
-" avoid key confused to use tab to escap vim mode
-let g:ycm_key_list_select_completion = ['<Tab>', '<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-"let g:ycm_server_log_level = 'debug'
-let g:ycm_global_ycm_extra_conf = '/Users/admin/.ycm_extra_conf.py'
-:command! Errors :YcmDiag
-let g:ycm_confirm_extra_conf = 0
-set completeopt-=preview " Don't show the window at the top with additional completion information
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_collect_identifiers_from_tags_files = 1   " Load completion identifiers from the ctags files as well.  ctags files in use can be found with `:echo tagfiles()`
-let g:ycm_autoclose_preview_window_after_completion = 1 " Close the window at the top that appears with additional completion information
-let g:ycm_autoclose_preview_window_after_insertion = 1
-function! SetErrorsAndWarnings() " Only show the errors and warnings gutter if it's a file that I wrote
-    let currentFilePath = expand('%:p')
-    echo currentFilePath
-    if currentFilePath =~ '/Dropbox/dev/'
-        let g:ycm_show_diagnostics_ui = 1
-    elseif currentFilePath =~ '/local'
-        let g:ycm_show_diagnostics_ui = 1
-    else
-        let g:ycm_show_diagnostics_ui = 0
-    endif
-endfunction
-" Execute the function before the file is opened so that it can be turned off in time for files that are be opened
-"autocmd BufRead * call SetErrorsAndWarnings()
-" Execute it on entering a buffer so that it can be turned on for files that were already read
-"autocmd BufEnter * call SetErrorsAndWarnings()
-let g:ycm_semantic_triggers =  {
-  \   'objc' : ['re!\@"\.*"\s',
-  \     're!\@\w+\.*\w*\s',
-  \     're!\@\(\w+\.*\w*\)\s',
-  \     're!\@\(\s*',
-  \     're!\@\[.*\]\s',
-  \     're!\@\[\s*',
-  \     're!\@\{.*\}\s',
-  \     're!\@\{\s*',
-  \     "re!\@\'.*\'\s",
-  \     '#ifdef ',
-  \     're!:\s*',
-  \     're!=\s*',
-  \     're!,\s*', ],
-  \ }
-" }}}
 
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -456,17 +405,6 @@ endfor
 autocmd InsertLeave * set iminsert=0
 
 let b:keymap_name = "CAPS"
-" }}}
-
-" Use <tab> instead of <esc> {{{
-"nnoremap <Tab> <Esc>
-"vnoremap <Tab> <Esc>gV
-"onoremap <Tab> <Esc>
-"cnoremap <Tab> <C-C><Esc>
-"inoremap <silent> <Tab> <Esc>`^
-"
-"inoremap <Leader><Tab> <Tab>
-"inoremap <C-i> <Tab>
 " }}}
 
 " fcitx {
