@@ -120,12 +120,6 @@ alias vi='nvim'
 # remove prompt_context of agnoster.zsh-theme
 export DEFAULT_USER="ihugo"
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/Users/ihugo/miniconda3/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_PYTHON=/Users/ihugo/miniconda3/bin/python
-export PROJECT_HOME=$HOME/code/python
-source /Users/ihugo/miniconda3/bin/virtualenvwrapper_lazy.sh
-
 # libxml2
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/libxml2/lib"
