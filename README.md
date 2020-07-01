@@ -126,4 +126,16 @@ ln -s ~/.config/nvim/karabiner ~/.config/karabiner
 :CocInstall coc-sourcekit
 :CocInstall coc-deno
 
+# Remove Cocos
+1. remove cocos directory & remove cocos envirment
+2. update envirenv with conda
+3. install pipx
+
+## install pipx
+```
+brew install pipx
+pipx install envirenv
+pip install virtualenvwrapper
+mkdir -p /Users/ihugo/code/python
+mkproject spider-jd
 ```

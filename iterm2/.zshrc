@@ -120,18 +120,11 @@ alias vi='nvim'
 # remove prompt_context of agnoster.zsh-theme
 export DEFAULT_USER="ihugo"
 
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT="/Users/ihugo/code/cocos2d-x/tools/cocos2d-console/bin"
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_X_ROOT for cocos2d-x
-export COCOS_X_ROOT="/Users/ihugo/code"
-export PATH=$COCOS_X_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT="/Users/ihugo/code/cocos2d-x/templates"
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=/Users/ihugo/miniconda3/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/Users/ihugo/miniconda3/bin/python
+export PROJECT_HOME=$HOME/code/python
+source /Users/ihugo/miniconda3/bin/virtualenvwrapper_lazy.sh
 
 # libxml2
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
@@ -139,12 +132,26 @@ export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-
 export MonkeyDevPath=/Users/hugo/opt/MonkeyDev
 export MonkeyDevDeviceIP=
 export PATH=/Users/hugo/opt/MonkeyDev/bin:$PATH
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/ihugo/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/ihugo/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/ihugo/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/ihugo/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# Created by `userpath` on 2020-07-01 06:36:44
+export PATH="$PATH:/Users/ihugo/.local/bin"
