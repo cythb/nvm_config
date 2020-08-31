@@ -77,7 +77,7 @@ ctags使用方法：
     1. <Tab>用来匹配括号，选择补全比较方便。
     2. 为了保持和xcode统一。
     3. 通过<C-[>来替换ESC使用也是比较方便。
-2. use <C-i> to insead of <Tab>
+2. use \<C-i\> to insead of \<Tab\>
 
 # 0x11. frida-ios-dump
 install frida-ios-dump
@@ -98,7 +98,7 @@ cp ./fcitx-remote-squirrel-rime-upstream /usr/local/bin/fcitx-remote
 ## install fcitx for vim
 PlugInstall
 
-# switch monitor with keyboard
+# ~~switch monitor with keyboard~~
 1. install service ( in directory )
 2. setup keyboard shortcut
 3. ^-H go to previous monitor / ^-L go to next monitor

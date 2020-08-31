@@ -64,10 +64,12 @@ Plug 'preservim/nerdcommenter'
 
 Plug 'jiangmiao/auto-pairs'
 
+" polyglot
+Plug 'sheerun/vim-polyglot'
+
 " COC
 " 加载基础配置
 LoadScript init/coc.vim
-
 call plug#end()
 
 " " Keyboard Mappings {{{
@@ -98,8 +100,8 @@ vnoremap / /\v
 " Remove search highlights with <leader><space>
 nnoremap <leader><space> :noh<cr>
 " Tab key matches bracket pairs
-nnoremap <Tab> %
-vnoremap <Tab> %
+"nnoremap <Tab> %
+"vnoremap <Tab> %
 " Use semi-colon as colon key
 nnoremap ; :
 
@@ -274,7 +276,7 @@ let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Theme
-let isLight = 1
+let isLight = 0
 if isLight == 1 
   set background=light
   colorscheme solarized8_flat
@@ -366,3 +368,33 @@ let g:fcitx_remote = '/usr/local/bin/fcitx-remote'
 " detecte itodo
 noremap <Leader>t :noautocmd vimgrep /itodo/j **/*.swift<CR>:cw<CR>
 
+" coc-snippets
+" 
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+" coc-snippets end
