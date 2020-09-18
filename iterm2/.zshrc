@@ -149,3 +149,7 @@ unset __conda_setup
 
 # Created by `userpath` on 2020-07-01 06:36:44
 export PATH="$PATH:/Users/ihugo/.local/bin"
+
+
+# TheOS
+export THEOS=~/code/theos

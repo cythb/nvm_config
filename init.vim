@@ -70,6 +70,10 @@ Plug 'sheerun/vim-polyglot'
 " COC
 " 加载基础配置
 LoadScript init/coc.vim
+
+" Debugger
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
+
 call plug#end()
 
 " " Keyboard Mappings {{{
