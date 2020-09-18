@@ -130,3 +130,10 @@ ln -s ~/.config/nvim/karabiner ~/.config/karabiner
 1. remove cocos directory & remove cocos envirment
 2. update envirenv with conda
 ```
+# Install Theos
+`````````
+```
+git clone --recursive https://github.com/theos/theos.git $THEOS
+
+nic.pl
+```

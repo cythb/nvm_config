@@ -153,3 +153,4 @@ export PATH="$PATH:/Users/ihugo/.local/bin"
 
 # TheOS
 export THEOS=~/code/theos
+export PATH="$PATH:$THEOS/bin"
