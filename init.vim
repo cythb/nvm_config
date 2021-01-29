@@ -47,7 +47,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'aserebryakov/vim-todo-lists'
 
 " Theme
-"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " fcitx
 Plug 'file://'.expand('~/.config/nvim/vim-local-plugin')
@@ -107,21 +107,21 @@ nnoremap <leader><space> :noh<cr>
 "nnoremap <Tab> %
 "vnoremap <Tab> %
 " Use semi-colon as colon key
-nnoremap ; :
+"nnoremap ; :
 
 "These are to cancel the default behavior of d, D, c, C to put the text they delete in the default register. Note that this means e.g. "ad won't copy the text into register a anymore.  You have to explicitly yank it.
-nnoremap d "cd
-vnoremap d "cd
-nnoremap D "cD
-vnoremap D "cD
-nnoremap c "cc
-vnoremap c "cc
-nnoremap C "cC
-vnoremap C "cC
-nnoremap x "cx
-vnoremap x "cx
+"nnoremap d "cd
+"vnoremap d "cd
+"nnoremap D "cD
+"vnoremap D "cD
+"nnoremap c "cc
+"vnoremap c "cc
+"nnoremap C "cC
+"vnoremap C "cC
+"nnoremap x "cx
+"vnoremap x "cx
 
-vmap r "_dP
+"vmap r "_dP
 
 " vim training
 nnoremap <up> <nop>
@@ -154,7 +154,7 @@ nnoremap <leader>k :cp<CR>
 " }}}
 "
 
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/Users/ihugo/miniconda3/bin/python3'
 
 " defx.nvim
 " 使用 ,e 切换显示文件浏览，使用 ,a 查找到当前文件位置
@@ -286,8 +286,8 @@ if isLight == 1
   colorscheme solarized8_flat
 else
   set background=dark
-  "colorscheme dracula
-  colorscheme solarized8_flat
+  colorscheme dracula
+  "colorscheme solarized8_flat
 endif
 
 let g:solarized_termtrans = 1

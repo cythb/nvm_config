@@ -154,3 +154,10 @@ export PATH="$PATH:/Users/ihugo/.local/bin"
 # TheOS
 export THEOS=~/code/theos
 export PATH="$PATH:$THEOS/bin"
+
+# Flutter
+export FLUTTER=~/code/flutter
+export PATH="$PATH:$FLUTTER/bin"
+
+export DENO_INSTALL="/Users/ihugo/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
