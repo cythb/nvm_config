@@ -76,6 +76,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   vi-mode
+  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -161,3 +162,6 @@ export PATH="$PATH:$FLUTTER/bin"
 
 export DENO_INSTALL="/Users/ihugo/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

@@ -188,3 +188,60 @@ func setupUI() {
 
 }
 endsnippet
+
+snippet vmvc "Generate MVVM.ViewController"
+class ForgetViewController: UIViewController, ViewModelBased {
+    typealias ViewModelType = ${1:ViewModelType}
+    typealias ViewBuilder = ${2:ViewBuilder}
+
+    // MARK: - Data
+    var viewModel: ViewModelType!
+    let bag = DisposeBag()
+
+    // MARK: - UI
+    let viewBuilder = ViewBuilder()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.setupUI()
+        self.bindViewModel()
+    }
+
+    // MARK: - Private method
+    private func setupUI() {
+
+    }
+
+    private func bindViewModel() {
+
+    }
+}
+endsnippet
+
+snippet vmvm "Generate ViewModel" b
+class ${1:ViewModel}: ServicesViewModel {
+    typealias Services = ${2:AppServices}
+
+    struct Input {
+
+    }
+
+    struct Output {
+
+    }
+
+    // MARK: - Property
+    var services: Services!
+    let steps = PublishRelay<Step>()
+
+    // MARK: - Method
+    func transform(input: Input) -> Output? {
+        return nil
+    }
+}
+
+extension ${2:AppServices}: Stepper {
+}
+
+endsnippet

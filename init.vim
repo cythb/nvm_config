@@ -285,8 +285,8 @@ if isLight == 1
   set background=light
   colorscheme solarized8_flat
 else
-  set background=dark
   colorscheme dracula
+  "set background=dark
   "colorscheme solarized8_flat
 endif
 

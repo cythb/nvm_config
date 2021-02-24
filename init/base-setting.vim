@@ -61,3 +61,5 @@ set incsearch
 set showmatch
 set hlsearch
 
+" Enable colorscheme dracula
+set termguicolors
